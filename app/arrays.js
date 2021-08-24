@@ -102,10 +102,10 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 { id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
-    console.log(id)
+    console.log()
     let error = { error: "No user with that id." }
    let x = staff.find(s => s.id == id)
-   console.log(x)
+   console.log()
    if(!x){
        return error
    }
@@ -137,4 +137,10 @@ let theBand = {
 }
 
 function bandMemberDetails(name) {
+    for(i = 0; i < theBand.members.length; i++){
+    let bandMember = theBand.members[i]
+    if(bandMember.name.includes(name)){
+    return (name + ' is in the band and plays the ' + bandMember.instrument)
+    }
+    }
 }
