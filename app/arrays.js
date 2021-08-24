@@ -19,6 +19,8 @@ arr.push(first[0])
 // output: 42
 
 function largestNum(arr) {
+
+
    max = Math.max.apply(null, arr);
    return max
 }
@@ -34,6 +36,11 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let output = [];
+    for (let x of arr)
+    output.push(x * arr.length)
+
+    return output
 }
 
 
@@ -70,9 +77,14 @@ let flights = [{
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
 
+ let x = flights.find(flight => flight.to.toLowerCase() == destination.toLowerCase());
+ if(firstClass){
+     return x.prices.firstClass;
+ }else{
+     return x.prices.standard;
+ }
+
 }
-
-
 // ------------------------------------------
 
 
