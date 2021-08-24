@@ -102,6 +102,14 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 { id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
+    console.log(id)
+    let error = { error: "No user with that id." }
+   let x = staff.find(s => s.id == id)
+   console.log(x)
+   if(!x){
+       return error
+   }
+   return x
 
 }
 
